@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+:root {
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --accent: #00f2ff; /* Ciano Neon */
+            --accent-secondary: #7000ff; /* Roxo Neon */
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+        }
+
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    scroll-behavior: smooth
+}
+
+nav{
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+}
+
+h1, h2, h3, .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -1px;
+}
+
+.navbar-brand{
+    font-size: 3vh;
+}
+
+.navbar-brand span{
+    color: var(--accent);
+}
+
+.nav-link{
+    text-transform: uppercase;
+}
+
+
+.active, .nav-link:hover {
+    color: var(--accent) !important;
+    text-shadow: var(--accent) 0px 0px 10px;
+}
+
+.home-section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.1) 0%, transparent 50%);
+}
+
+.home-title {
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--text-main), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.home-sub_title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.btn-links{
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 12px 30px;
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-links:hover{
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    box-shadow: var(--accent) 0px 0px 15px;
+}
+
+
+.img-caricatura{
+    width: 75%;
+    border-radius: 5px;
+    border: 1px solid var(--accent);
+    box-shadow: var(--accent) 0px 0px 15px;
+}
+
+.sobre-mim-section{
+    padding: 60px 0;
+}
+
+.sobre-mim-section{
+
+    .linha{
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin-bottom: 20px;
+}
+
+    h2{
+    font-size: 2.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+    span{
+        color: var(--accent);
+    }
+
+    p{
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    background: rgba(0, 242, 255, 0.1);
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.projetos-section {
+    padding: 60px 0;
+    background: rgba(10, 10, 10, 0.8);;
+
+    .linha{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);  
+    } 
+}
+
+.title-projetos{
+    h2{
+    font-size: 2.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    }
+        span{
+        color: var(--accent);
+        font-family: 'Space Grotesk', sans-serif;
+        }
+    }
+
+.animated-border-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px; /* Um pouco maior que o border-radius do card */
+    padding: 2px; /* ESSA É A ESPESSURA DA BORDA ANIMADA! */
+    transition: transform 0.4s ease;
+    height: 100%; /* Garante que preencha o grid do Bootstrap */
+    background: transparent; /* Sem borda por padrão */
+
+    .img-fluid {
+        margin: 5%;
+        border-radius: 10px;
+    }
+}
+
+/* O feixe de luz que gira no fundo do wrapper */
+.animated-border-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: -75%;
+    left: -75%;
+    background: conic-gradient(
+        transparent, 
+        transparent 80%, 
+        #00c3ff 100% /* Cor do feixe */
+    );
+    animation: spin 3s linear infinite;
+    opacity: 0; /* COMEÇA INVISÍVEL */
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+/* ---------------------------------------------------
+   2. O EVENTO DE HOVER
+--------------------------------------------------- */
+.animated-border-wrapper:hover {
+    transform: translateY(-10px); /* Faz o conjunto todo subir */
+}
+
+.animated-border-wrapper:hover::before {
+    opacity: 1; /* ACENDE a animação da borda apenas quando passa o mouse */
+}
+
+/* ---------------------------------------------------
+   3. O SEU CARD: Serve como "tampa" para esconder o meio
+--------------------------------------------------- */
+.animated-border-wrapper .card {
+    /* COR SÓLIDA É OBRIGATÓRIA AQUI PARA ESCONDER A LUZ DO FUNDO */
+    background-color: #121214; /* Ajuste para o cinza escuro/preto do seu projeto */
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    border: none !important; /* Remove qualquer borda padrão */
+    position: relative;
+    z-index: 2; /* Fica acima do feixe de luz */
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.animated-border-wrapper .card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* Se você usa margin na imagem, mantenha. Mas o radius precisa bater com o topo */
+}
+
+/* ---------------------------------------------------
+   4. ANIMAÇÃO DE ROTAÇÃO
+--------------------------------------------------- */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.contato-section{
+    padding: 60px 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.smoke{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.1) 0%, transparent 50%);
+}
+
+.title-contato{
+    h2{
+    font-size: 2.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    }
+        span{
+        color: var(--accent);
+        font-family: 'Space Grotesk', sans-serif;
+        }
+    }
+
+    .meios-contato{
+       background: var(--bg-dark);
+       padding: 25px;
+       border-radius: 10px;
+    }
