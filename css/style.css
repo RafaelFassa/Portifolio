@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 
+html {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 100px !important; /* Espaço para a navbar não cobrir o título */
+}
+
 :root {
             --bg-dark: #0a0a0a;
             --bg-card: rgba(255, 255, 255, 0.05);
@@ -14,7 +19,6 @@
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
-    scroll-behavior: smooth
 }
 
 nav{
@@ -146,6 +150,7 @@ h1, h2, h3, .navbar-brand {
     .linha{
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     width: 60px;
     height: 3px;
     background: var(--accent);  
@@ -238,31 +243,274 @@ h1, h2, h3, .navbar-brand {
     100% { transform: rotate(360deg); }
 }
 
-.contato-section{
-    padding: 60px 0;
-    background: rgba(0, 0, 0, 0.8);
+/* =========================================
+   SEÇÃO DE CONTATO
+========================================= */
+.contato-section {
+    padding: 100px 0;
+    position: relative;
 }
 
-.smoke{
-    height: 50vh;
+.smoke {
+    min-height: 50vh; 
+    padding: 40px 0;
     display: flex;
     align-items: center;
-    background: radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.15) 0%, transparent 60%);
 }
 
-.title-contato{
-    h2{
+.title-contato {
+    margin-bottom: 20px;
+}
+
+.title-contato h2 {
     font-size: 2.5rem;
     font-family: 'Space Grotesk', sans-serif;
+}
+
+.title-contato span {
+    color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Container dos dois blocos (Cards e Form) */
+.meios-contato {
+    background: var(--bg-card); /* Fundo sutil transparente */
+    backdrop-filter: blur(10px); /* Efeito de vidro */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.meios-contato h4 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    margin-bottom: 30px;
+    
+}
+
+/* =========================================
+   CARDS DE CONTATO ANIMADOS
+========================================= */
+.card-contatos {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    /* Animação com curva elástica (bouncy) para dar uma sensação moderna */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 40px 10px;
+    border-radius: 12px;
+    height: 100%; /* Mantém os cards alinhados */
+    position: relative;
+    overflow: hidden;
+
+    a{
+        text-decoration: none;
+        color: inherit;
     }
-        span{
-        color: var(--accent);
+}
+
+/* Brilho interno invisível que acende no hover */
+.card-contatos::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
+    transition: width 0.4s ease, height 0.4s ease;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.card-contatos .card-body {
+    position: relative;
+    z-index: 1; /* Garante que o texto fique acima do brilho */
+    
+}
+
+.card-contatos i {
+    font-size: 2.5rem;
+    color: var(--text-muted); /* Ícone começa apagado */
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: all 0.4s ease;
+    
+}
+
+.card-contatos p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* O EFEITO HOVER NOS CARDS */
+.card-contatos:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent); /* Borda acende em ciano */
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px -5px rgba(0, 242, 255, 0.2); /* Sombra neon */
+}
+
+.card-contatos:hover::before {
+    width: 200px;
+    height: 200px; /* O brilho expande no fundo */
+}
+
+.card-contatos:hover i {
+    color: var(--accent); /* Ícone acende */
+    transform: scale(1.2) rotate(5deg); /* Ícone dá uma leve crescida e giradinha */
+    text-shadow: 0 0 15px var(--accent);
+}
+
+.card-contatos:hover p, .card-contatos:hover .card-title {
+    color: #fff; /* Texto fica bem branco no foco */
+}
+
+/* =========================================
+   FORMULÁRIO DE CONTATO (GLASSMORPHISM)
+========================================= */
+.form-contato {
+    text-align: left; /* Alinhamento à esquerda fica mais elegante em formulários */
+}
+
+.form-contato p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+}
+
+.form-contato label {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-contato .form-control {
+    background: rgba(0, 0, 0, 0.4); /* Fundo escuro e translúcido, não mais aquele cinza feio */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Cor do texto de dica (placeholder) */
+.form-contato .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Quando o usuário clica para digitar (Focus) */
+.form-contato .form-control:focus {
+    background: rgba(0, 242, 255, 0.03); /* Leve tom de ciano no fundo */
+    border-color: var(--accent); /* Borda acende */
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); /* Sombra neon interna/externa */
+    outline: none;
+    color: #fff;
+}
+
+.form-contato button {
+    background: linear-gradient(45deg, var(--accent), var(--accent-secondary));
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+    padding: 14px 30px;
+    text-transform: uppercase;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px; /* Botão arredondado mais moderno */
+    width: 100%; /* Botão ocupando a largura toda do formulário */
+    margin-top: 15px;
+}
+
+.form-contato button:hover {
+    transform: translateY(-3px) scale(1.02); /* Pula pra frente e cresce um pouquinho */
+    box-shadow: 0 10px 20px -5px rgba(112, 0, 255, 0.6); /* Sombra roxa forte */
+}
+
+.form-contato .privacy-text {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.footer{
+    background: linear-gradient(45deg, rgba(112, 0, 255, 0.15), rgba(10, 10, 10, 0.8));
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+
+    h2{
+        margin-top: 3rem;
+        font-weight: bold;
         font-family: 'Space Grotesk', sans-serif;
-        }
+    }
+    span{
+        color: var(--accent);
+        font-weight: bold;
     }
 
-    .meios-contato{
-       background: var(--bg-dark);
-       padding: 25px;
-       border-radius: 10px;
+    .sub-footer{
+        margin-top: 10px;
+        font-size: 18px;
+        color: var(--text-muted);
     }
+
+    i{
+        color: var(--text-main);
+        font-size: 1.5rem;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+    }
+
+    i:hover{
+        color: var(--accent);
+        text-shadow: 0 0 10px var(--accent);
+        transform: translateY(-3px) scale(1.02);
+    }
+
+    p{
+        color: var(--text-muted);
+    }
+    hr{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.btn-email{
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 12px 30px;
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-email:hover{
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    box-shadow: var(--accent) 0px 0px 15px;
+    transform: translateY(-3px) scale(1.02);
+}
