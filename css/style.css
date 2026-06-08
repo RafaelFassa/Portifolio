@@ -191,11 +191,7 @@ h1, h2, h3, .navbar-brand {
     height: 250%;
     top: -75%;
     left: -75%;
-    background: conic-gradient(
-        transparent, 
-        transparent 80%, 
-        #00c3ff 100% /* Cor do feixe */
-    );
+    background-image: conic-gradient(from 0deg, var(--bg-dark), var(--accent-secondary), var(--accent), var(--accent-secondary), var(--bg-dark) 25%, var(--bg-dark));
     animation: spin 3s linear infinite;
     opacity: 0; /* COMEÇA INVISÍVEL */
     transition: opacity 0.3s ease;
@@ -447,7 +443,7 @@ h1, h2, h3, .navbar-brand {
 }
 
 .footer{
-    background: linear-gradient(45deg, rgba(112, 0, 255, 0.15), rgba(10, 10, 10, 0.8));
+    background: radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.15) 0%, transparent 60%);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 10px 20px;
@@ -499,6 +495,7 @@ h1, h2, h3, .navbar-brand {
     border: 1px solid var(--accent);
     padding: 12px 30px;
     font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
