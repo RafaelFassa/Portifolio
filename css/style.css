@@ -447,6 +447,10 @@ h1, h2, h3, .navbar-brand {
     background: var(--accent);
     margin-bottom: 20px;
     }
+
+    span{
+        color: var(--accent);
+    }
 }
 
 .form-contato p {
