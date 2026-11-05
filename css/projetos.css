@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+.banner {
+    background: radial-gradient(circle at 20% 50%, rgba(112, 0, 255, 0.1) 0%, transparent 55%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+    position: relative;
+}
+
+.banner .container-fluid {
+    width: 100%;
+}
+
+.title-projetos{
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(to right, var(--text-main), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.imagem-projeto img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    display: block;
+}
+
+#Info_Projeto{
+    background-color: var(--bg-dark);
+
+    .container-fluid{
+        padding: 50px 50px;
+    
+        span{
+            color: var(--accent);
+        }
+
+        p{
+            color: var(--text-muted);
+            padding-right: 10%;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.title-proje{
+    font-size: 6vh;
+    font-weight: bold;
+
+    span{
+        color: var(--accent);
+    }
+}
+
+.linha{
+    background-color: var(--accent);
+    width: 150px;
+    height: 2px;
+    margin-bottom: 20px;
+}
+
+#projeto{
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    padding: 50px 50px;
+    margin-bottom: 2%;
+    
+    .linha{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 60px;
+        height: 3px;
+        background: var(--accent);  
+    } 
+}
+
+.projeto-wrapper {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Altura generosa para desktop */
+    min-height: 500px; 
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    margin-bottom: 10vh;
+    background-color: white;
+}
+
+.projeto-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* No desktop, fica sem zoom e com barra de rolagem normal nativa do iframe */
+}
+
+/* =========================================
+   AJUSTES EXCLUSIVOS PARA MOBILE (TELEMÓVEL)
+========================================= */
+@media (max-width: 768px) {
+    .projeto-wrapper {
+        width: 100%;
+        height: 400px; /* Altura ajustada para mostrar o projeto completo de ponta a ponta */
+        overflow: hidden;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .projeto-iframe {
+        width: 1000px;  /* Largura simulada ideal para desktop em miniatura */
+        height: 1400px; /* Altura suficiente para exibir o rodapé */
+        border: none;
+        zoom: 0.32;     /* Escala ideal para ocupar toda a largura da tela do telemóvel sem sobras laterais */
+    }
+}
+
+.btn-GitHub{
+    background-color: transparent;
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-GitHub:hover{
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    box-shadow: var(--accent) 0px 0px 15px;
+}
+
+/* =========================================
+   AJUSTES RESPONSIVOS PARA MOBILE (EXCLUSÃO DE SCROLL HORIZONTAL)
+========================================= */
+@media (max-width: 768px) {
+    #Info_Projeto .container-fluid,
+    #projeto {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .banner {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .title-projetos {
+        font-size: 2.2rem !important;
+    }
+}
