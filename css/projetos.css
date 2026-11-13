@@ -48,6 +48,39 @@
             font-size: 1.2rem;
         }
     }
+
+    .card {
+    background-color: var(--bg-card);
+    height: 100%;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 25px rgba(0, 242, 255, 0.25);
+}
+
+.card-title {
+    color: var(--text-main);
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    
+    span {
+        color: var(--accent);
+    }
+}
+
+.card-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5; /* Melhora a legibilidade do texto interno */
+}
 }
 
 .title-proje{
@@ -64,6 +97,15 @@
     width: 150px;
     height: 2px;
     margin-bottom: 20px;
+}
+
+.linha2 {
+    background-color: var(--accent);
+    width: 40%;
+    height: 2px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 #projeto{

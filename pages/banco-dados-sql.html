@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio|Banco-de-Dados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../img/R-logo2.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projetos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Rafael<span>.Fassa</span></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Info_Projeto">Informações do projeto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.fateclins.edu.br/web/">Fatec de Lins</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="banner">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6">
+        <h1 class="title-projetos">Criação Banco de Dados SQL - Workbench</h1>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="imagem-projeto">
+          <img src="../img/Criação-Banco.png" alt="Codigo sql" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Começo informações projeto-->
+
+<section id="Info_Projeto">
+    <div class="container-fluid">
+        <h2 class="title-proje">Informações do <span>Projeto</span></h2>
+        <div class="linha"></div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-sm-6 mr-5">
+                <p> Dando continuidade à evolução do esquema criado, esta etapa consistiu na implementação física da arquitetura de vendas e na manipulação direta dos registros de dados. O alicerce tecnológico utilizado foi a SQL (Structured Query Language), linguagem padrão para gerenciamento, consulta e manipulação de informações em bancos de dados relacionais. Através dela, foi estruturada a base física das tabelas (utilizando comandos DDL) e implementadas as operações transacionais diárias de um sistema comercial moderno (CRUD), garantindo a persistência, leitura e atualização contínua do estado das informações.
+                </p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6">
+                <div class="imagem-projeto">
+                    <img src="../img/sql.png" alt="Codigo sql manipuação de dados"
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h2 class="fw-bold">Implementação</h2>
+        <div class="linha"></div>
+        <div class="row">
+            <p>A implementação foi desenvolvida no ambiente MySQL Workbench, sendo o script dividido em três frentes técnicas fundamentais:</p>
+            <div class="col-12 col-md-4 col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Estruturação <span>Física (DDL):</span></h5>
+                        <p class="card-text">Instanciação das tabelas (CLIENTE, PRODUTO, PEDIDO, ITEM_PEDIDO) aplicando rigorosas regras de integridade. Implementou-se o auto incremento para as chaves primárias e o engessamento relacional através das Chaves Estrangeiras (FOREIGN KEY).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Manipulação e Persistência <span>de Dados (DML):</span></h5>
+                        <p class="card-text">Execução de rotinas de inserção de dados (INSERT) populando as tabelas, utilização do comando DELETE para remover registros específicos e o comando UPDATE para aplicar lógicas de negócio em lote (como o reajuste dinâmico do preço unitário).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Consultas e <span>Otimização (DQL):</span></h5>
+                        <p class="card-text">Extração de dados através de comandos SELECT com filtros específicos. Foram aplicadas funções de agregação (MIN, MAX, COUNT, AVG) para simular a extração de relatórios gerenciais, e implementou-se um índice (INDEX) para otimizar o custo computacional de buscas textuais no sistema.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Fim informações do projeto-->
+
+<!--Começo da exibição do Projeto-->
+
+
+<footer class="text-center text-white py-3 footer">
+    <h2>Vamos Construir o <span>Futuro?</span></h2>
+    <p class="sub-footer">Estou disponível para novos projetos e colaborações.</p>
+    <div class="d-flex justify-content-center gap-4 mb-4">
+        <a href="https://wa.me/5514998585308?s=t" class="text-white fs-2 hover-effect"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://github.com/rafaelfassa" class="text-white fs-2 hover-effect"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/rafaelfassa/" class="text-white fs-2 hover-effect"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:rafael.teixeira0912@gmail.com" class="text-white fs-2 hover-effect"><i class="bi bi-envelope"></i></a>
+    </div>
+    <a href="mailto:rafael.teixeira0912@gmail.com" class="btn btn-email">Enviar Email</a>
+    <hr>
+    <p>&copy; 2026 Rafael Fassa. Todos os direitos reservados.</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>

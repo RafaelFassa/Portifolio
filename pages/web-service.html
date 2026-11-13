@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio|Web-Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="../img/R-logo2.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projetos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Rafael<span>.Fassa</span></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Info_Projeto">Informações do projeto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.fateclins.edu.br/web/">Fatec de Lins</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="banner">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6">
+        <h1 class="title-projetos">Consumo de um Web Service</h1>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="imagem-projeto">
+          <img src="../img/web-service-julio.png" alt="Teste no SoapUI" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Começo informações projeto-->
+
+<section id="Info_Projeto">
+    <div class="container-fluid">
+        <h2 class="title-proje">Informações do <span>Projeto</span></h2>
+        <div class="linha"></div>
+        <div class="row align-items-center mb-2">
+    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+        <h3 class="text-white fw-bold mb-3">Arquitetura e <span>Lado do Servidor</span></h3>
+        <p>
+            O projeto consistiu no desenvolvimento, publicação e consumo de um Web Service distribuído fundamentado no padrão SOAP (Simple Object Access Protocol), abrangendo a arquitetura completa entre servidor (Server) e cliente (Client). O objetivo central foi consolidar os conceitos da Arquitetura Orientada a Serviços (SOA), permitindo a integração de sistemas heterogêneos por meio de serviços reutilizáveis e interoperáveis. Utilizando a linguagem Java na IDE Eclipse com o servidor Apache Tomcat, a lógica de negócio foi estruturada com anotações JWS para expor serviços funcionais — como automação de saudação baseada no horário e um gerador de senhas customizáveis —, garantindo a troca de mensagens padronizadas em formato XML através do contrato WSDL.
+        </p>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="imagem-projeto">
+            <img src="../img/codigo projeto julio.png" alt="Codigo Java" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<div class="linha2"></div>
+
+<div class="row align-items-center mt-2 pt-2">
+    <div class="col-lg-6 col-md-12 order-lg-1 order-2">
+        <div class="imagem-projeto">
+            <img src="../img/Codigo no cmd.png" alt="Teste via Cmd" class="img-fluid">
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12 order-lg-2 order-1 mb-4 mb-lg-0">
+        <h3 class="text-white fw-bold mb-3">Execução e <span>Consumo via Cliente</span></h3>
+        <p>
+            Para validar a comunicação distribuída, foi desenvolvido o módulo cliente responsável por consumir os serviços disponibilizados pelo servidor em tempo de execução. Através de requisições transacionais processadas via protocolo SOAP, a aplicação cliente interage diretamente com o ecossistema remoto, permitindo invocar operações e receber respostas estruturadas de forma síncrona. Os testes e a execução via console (Prompt de Comando) demonstram a eficiência na comunicação entre sistemas independentes, evidenciando o funcionamento fluido da arquitetura orientada a serviços na prática.
+        </p>
+    </div>
+</div>
+    </div>
+    <div class="container-fluid">
+        <h2 class="fw-bold">Implementação</h2>
+        <div class="linha"></div>
+        <div class="row">
+            <p>A implementação técnica foi dividida em quatro etapas fundamentais, cobrindo todo o ciclo de vida de uma aplicação distribuída:</p>
+            <div class="col-12 col-md-6 col-sm-6 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Desenvolvimento do <span>Web Service (Servidor):</span></h5>
+                        <p class="card-text">No projeto SoapHelloWS, dentro do pacote ws.hello, criou-se a classe SoapHelloWS.java. A classe foi decorada com a anotação @WebService e seus métodos com @WebMethod. Foram programadas duas regras de negócio: a emissão de uma saudação dinâmica com data e hora formatadas de acordo com o horário do servidor e um gerador de senhas seguras configurável por parâmetros de tamanho, inclusão de números e caracteres especiais.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-sm-6 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Publicação do Serviço <span>e Contrato WSDL:</span></h5>
+                        <p class="card-text">A partir das anotações JWS, o serviço foi publicado e seu contrato estrutural WSDL foi disponibilizado pelo servidor Apache Tomcat na porta 8080, permitindo o mapeamento remoto dos métodos disponíveis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-sm-6 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Validação Transacional <span>com SoapUI:</span></h5>
+                        <p class="card-text">O contrato WSDL foi importado na ferramenta de testes SoapUI. Foram validadas as requisições SOAP para o método saudacao() e para o método gerarSenha(), inspecionando os envelopes XML de envio e resposta para garantir a integridade da comunicação.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-sm-6 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Construção do Cliente Java <span>e Portabilidade (JAR Executável):</span></h5>
+                        <p class="card-text">No projeto SoapHelloClient, utilizaram-se assistentes da IDE para gerar os proxies de comunicação remota baseados no WSDL. Na classe SoapHelloClient.java, desenvolveu-se a interface de terminal que lê os parâmetros do usuário via teclado e dispara as chamadas remotas ao servidor tratando exceções RemoteException. Para assegurar a portabilidade total, o projeto cliente foi empacotado como um arquivo Runnable JAR contendo todas as dependências do Apache Axis embutidas, permitindo sua execução autônoma via Prompt de Comando (CMD) do Windows.
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Fim informações do projeto-->
+
+<!--Começo da exibição do Projeto-->
+
+
+<footer class="text-center text-white py-3 footer">
+    <h2>Vamos Construir o <span>Futuro?</span></h2>
+    <p class="sub-footer">Estou disponível para novos projetos e colaborações.</p>
+    <div class="d-flex justify-content-center gap-4 mb-4">
+        <a href="https://wa.me/5514998585308?s=t" class="text-white fs-2 hover-effect"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://github.com/rafaelfassa" class="text-white fs-2 hover-effect"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/rafaelfassa/" class="text-white fs-2 hover-effect"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:rafael.teixeira0912@gmail.com" class="text-white fs-2 hover-effect"><i class="bi bi-envelope"></i></a>
+    </div>
+    <a href="mailto:rafael.teixeira0912@gmail.com" class="btn btn-email">Enviar Email</a>
+    <hr>
+    <p>&copy; 2026 Rafael Fassa. Todos os direitos reservados.</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>
